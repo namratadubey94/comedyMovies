@@ -20,7 +20,7 @@ class RomanticComedyList extends Component {
                         this.props.comedyList.map((item, index) => (
                             <Grid item md={4} sm={4} xs={4} key={index}>
                                 <img src={process.env.PUBLIC_URL + '/Slices/' + item["poster-image"]} style={{ maxWidth: "100%", width: "100%", height: "auto" }} alt={"hello"} />
-                                <Typography gutterBottom variant="h5" component="h2" style={{ textAlign: "center", color: "gray" }}>
+                                <Typography gutterBottom variant="h5" component="h5" style={{ textAlign: "center", color: "gray", fontSize: "1rem" }}>
                                     {item.name}
                                 </Typography>
                             </Grid>
