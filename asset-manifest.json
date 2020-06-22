@@ -1,13 +1,13 @@
 {
   "main.css": "/comedyMovies/static/css/main.46ba7efb.chunk.css",
-  "main.js": "/comedyMovies/static/js/main.5ffec886.chunk.js",
-  "main.js.map": "/comedyMovies/static/js/main.5ffec886.chunk.js.map",
+  "main.js": "/comedyMovies/static/js/main.1e69ab25.chunk.js",
+  "main.js.map": "/comedyMovies/static/js/main.1e69ab25.chunk.js.map",
   "runtime~main.js": "/comedyMovies/static/js/runtime~main.08c70866.js",
   "runtime~main.js.map": "/comedyMovies/static/js/runtime~main.08c70866.js.map",
   "static/js/2.8257f24a.chunk.js": "/comedyMovies/static/js/2.8257f24a.chunk.js",
   "static/js/2.8257f24a.chunk.js.map": "/comedyMovies/static/js/2.8257f24a.chunk.js.map",
   "index.html": "/comedyMovies/index.html",
-  "precache-manifest.c121e5cf2efc2acd5a426d384229ee73.js": "/comedyMovies/precache-manifest.c121e5cf2efc2acd5a426d384229ee73.js",
+  "precache-manifest.e0582d802b5c02b1e46f0e994b51083c.js": "/comedyMovies/precache-manifest.e0582d802b5c02b1e46f0e994b51083c.js",
   "service-worker.js": "/comedyMovies/service-worker.js",
   "static/css/main.46ba7efb.chunk.css.map": "/comedyMovies/static/css/main.46ba7efb.chunk.css.map"
 }
