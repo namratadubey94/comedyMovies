@@ -2,10 +2,13 @@ import React, { Component } from "react";
 import RomanticComedyList from "./RomanticComedyList";
 import { connect } from 'react-redux';
 import { fetchRComedyRequest } from "../../reducers/romanticComedy/romanticComedyReducer";
+import NavBar from "../common/NavBar";
+import { Container } from "@material-ui/core";
 
 class RomanticComedy extends Component {
     state = {
-        page: 1
+        page: 1,
+        search: ""
     }
     componentDidMount() {
         this.props.onFetchRComedy({
@@ -18,17 +21,36 @@ class RomanticComedy extends Component {
     }
     fetchMoreData = () => {
         this.props.onFetchRComedy({
-            page: this.state.page, callback: (err, res) => {
+            page: this.state.page, search: this.state.search, callback: (err, res) => {
                 if (res) {
                     this.setState({ page: this.state.page + 1 });
                 }
             }
         });
     }
+
+    handleSearch = (search) => {
+        this.setState({ search: search }, () => {
+            this.props.onFetchRComedy({
+                page: 1, search: search, callback: (err, res) => {
+                    if (res) {
+                        this.setState({ page: this.state.page + 1 });
+                    }
+                }
+            });
+        });
+    }
+
     render() {
         return (
             <>
-                <RomanticComedyList comedyList={this.props.comedies} fetchMoreData={this.fetchMoreData} page={this.state.page} />
+                <NavBar onSearch={this.handleSearch} />
+                <main>
+                    <Container style={{ marginTop: 70 }}>
+                        <RomanticComedyList comedyList={this.props.comedies} fetchMoreData={this.fetchMoreData} page={this.state.page} />
+                    </Container>
+                </main>
+
             </>
         )
     }

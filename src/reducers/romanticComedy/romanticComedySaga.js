@@ -12,26 +12,44 @@ import {
 
 /**********************/
 function* fetchRComedyWorker({ payload }) {
-    const { page, callback } = payload
+    const { page, search, callback } = payload;
+    console.log("page is", page);
+    console.log("search is", search);
     try {
         let data = null;
         switch (page) {
             case 1:
-                data = page1Data.page["content-items"].content;
+                if (search) {
+                    data = page1Data.page["content-items"].content.filter(item => item.name === search);
+                } else {
+                    data = page1Data.page["content-items"].content;
+                }
                 break;
             case 2:
-                data = page2Data.page["content-items"].content;
+                if (search) {
+                    data = page2Data.page["content-items"].content.filter(item => item.name === search)
+                } else {
+                    data = page2Data.page["content-items"].content;
+                }
                 break;
-
             case 3:
-                data = page3Data.page["content-items"].content;
+                if (search) {
+                    data = page3Data.page["content-items"].content.filter(item => item.name === search)
+                } else {
+                    data = page3Data.page["content-items"].content;
+                }
+                console.log("data is.......", data)
                 break;
             default:
-                data = page1Data.page["content-items"].content;
+                if (search) {
+                    data = page1Data.page["content-items"].content.filter(item => item.name === search)
+                } else {
+                    data = page1Data.page["content-items"].content;
+                }
                 break;
         }
         if (callback) callback(null, data);
-        yield put(fetchRComedySuccess(data));
+        yield put(fetchRComedySuccess({data, page}));
     } catch (err) {
         if (callback) callback(err.message, null);
         yield put(fetchRComedyFailure(err));

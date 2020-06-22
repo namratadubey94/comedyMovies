@@ -16,10 +16,15 @@ const initialState = {
 export default handleActions({
     [fetchRComedyRequest]: state => state,
     [fetchRComedySuccess]: (state, { payload }) => {
-        const comedies = state.comedies;
-        const newComedies = comedies.concat(payload);
+        let comedyData = [];
+        if (payload.page === 1) {
+            comedyData = payload.data;
+        } else {
+            const comedies = state.comedies;
+            comedyData = comedies.concat(payload.data);
+        }
         return update(state, {
-            comedies: { $set: newComedies }
+            comedies: { $set: comedyData }
         })
     },
     [fetchRComedyFailure]: (state, { payload }) =>

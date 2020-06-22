@@ -1,10 +1,10 @@
 import React from 'react';
-import RomanticComedyList from "./components/RomanticComedy/RomanticComedy";
+import RomanticComedy from "./components/RomanticComedy/RomanticComedy";
 
 function App() {
   return (
     <>
-      <RomanticComedyList />
+      <RomanticComedy />
     </>
   );
 }
