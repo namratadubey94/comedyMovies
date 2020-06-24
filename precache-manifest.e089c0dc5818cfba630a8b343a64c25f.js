@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "db9b2eb0649dd80c47c9",
+    "revision": "a99e4009323f9965228a",
     "url": "/comedyMovies/static/css/main.46ba7efb.chunk.css"
   },
   {
-    "revision": "db9b2eb0649dd80c47c9",
-    "url": "/comedyMovies/static/js/main.6eb467c2.chunk.js"
+    "revision": "a99e4009323f9965228a",
+    "url": "/comedyMovies/static/js/main.9da5b0ab.chunk.js"
   },
   {
     "revision": "6dc4ef6ba33c700a3a85",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/comedyMovies/static/js/2.8257f24a.chunk.js"
   },
   {
-    "revision": "1e4183b3c817612cdf10a90c203fa21a",
+    "revision": "869961fcb97015aa36edbd96c74d9ddf",
     "url": "/comedyMovies/index.html"
   }
 ];
