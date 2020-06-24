@@ -20,36 +20,36 @@ function* fetchRComedyWorker({ payload }) {
         switch (page) {
             case 1:
                 if (search) {
-                    data = page1Data.page["content-items"].content.filter(item => item.name === search);
+                    data = page1Data.page["content-items"].content.filter(item => item.name.toLowerCase().search(search) >= 0 );
+                    console.log("data is,,,,,", data)
                 } else {
                     data = page1Data.page["content-items"].content;
                 }
                 break;
             case 2:
                 if (search) {
-                    data = page2Data.page["content-items"].content.filter(item => item.name === search)
+                    data = page2Data.page["content-items"].content.filter(item => item.name.toLowerCase().search(search) >= 0 );
                 } else {
                     data = page2Data.page["content-items"].content;
                 }
                 break;
             case 3:
                 if (search) {
-                    data = page3Data.page["content-items"].content.filter(item => item.name === search)
+                    data = page3Data.page["content-items"].content.filter(item => item.name.toLowerCase().search(search) >= 0 );
                 } else {
                     data = page3Data.page["content-items"].content;
                 }
-                console.log("data is.......", data)
                 break;
             default:
                 if (search) {
-                    data = page1Data.page["content-items"].content.filter(item => item.name === search)
+                    data = page1Data.page["content-items"].content.filter(item => item.name.toLowerCase().search(search) >= 0 );
                 } else {
                     data = page1Data.page["content-items"].content;
                 }
                 break;
         }
         if (callback) callback(null, data);
-        yield put(fetchRComedySuccess({data, page}));
+        yield put(fetchRComedySuccess({ data, page }));
     } catch (err) {
         if (callback) callback(err.message, null);
         yield put(fetchRComedyFailure(err));

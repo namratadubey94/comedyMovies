@@ -12,7 +12,7 @@ class RomanticComedy extends Component {
     }
     componentDidMount() {
         this.props.onFetchRComedy({
-            page: 1, callback: (err, res) => {
+            page: this.state.page, callback: (err, res) => {
                 if (res) {
                     this.setState({ page: this.state.page + 1 });
                 }
@@ -30,15 +30,20 @@ class RomanticComedy extends Component {
     }
 
     handleSearch = (search) => {
-        this.setState({ search: search }, () => {
-            this.props.onFetchRComedy({
-                page: 1, search: search, callback: (err, res) => {
-                    if (res) {
-                        this.setState({ page: this.state.page + 1 });
+        this.setState({ page: 1 }, () => {
+
+            this.setState({ search: search }, () => {
+                this.props.onFetchRComedy({
+                    page: this.state.page, search: search, callback: (err, res) => {
+                        if (res) {
+                            this.setState({ page: this.state.page + 1 }, () => {
+                                console.log("new page is.........", this.state.page)
+                            });
+                        }
                     }
-                }
+                });
             });
-        });
+        })
     }
 
     render() {
