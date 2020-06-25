@@ -36,9 +36,7 @@ class RomanticComedy extends Component {
                 this.props.onFetchRComedy({
                     page: this.state.page, search: search, callback: (err, res) => {
                         if (res) {
-                            this.setState({ page: this.state.page + 1 }, () => {
-                                console.log("new page is.........", this.state.page)
-                            });
+                            this.setState({ page: this.state.page + 1 });
                         }
                     }
                 });

@@ -6,7 +6,6 @@ class RomanticComedyList extends Component {
     componentDidMount() {
         window.addEventListener('scroll', () => {
             if (this.props.page <= 3 && window.innerHeight + Math.round(document.documentElement.scrollTop) === document.scrollingElement.scrollHeight) {
-                console.log("page is.......", this.props.page)
                 this.props.fetchMoreData();
             }
         });
